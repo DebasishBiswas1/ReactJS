@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { InputBox } from './components'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
-import './App.css'
+// import './App.css'
 
 function App() {
   const [amount, setAmount] = useState(0)
@@ -25,13 +25,32 @@ function App() {
   }
 
   return (
-    <div
-        className="w-screen h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
-        style={{
-            backgroundImage: `url('https://plus.unsplash.com/premium_photo-1681487767138-ddf2d67b35c1?q=80&w=1910&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-        }}
+
+    <div className="w-screen h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+    style={{
+        backgroundImage: `url('https://media.istockphoto.com/id/1009803562/photo/group-of-people-on-peak-mountain-climbing-helping-team-work-travel-trekking-success-business.jpg?s=2048x2048&w=is&k=20&c=eA6Upb1S8PXAQ2isdBjnXdxqI-oVEtAtDt6V2SEL1Ms=')`,
+    }}
     >
-        <div className="w-full">
+        
+        <div class="w=1/2 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg" src="./src/assets/cardImages/Tea.jpg" alt="" />
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Chai Aur Code</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                <a href="https://www.youtube.com/@chaiaurcode" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Explore Channel
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="https://www.youtube.com/@chaiaurcode" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div className="w-1/2">
             <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                 <form
                     onSubmit={(e) => {
@@ -64,8 +83,9 @@ function App() {
                             label="To"
                             amount={convertedAmount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency)=>setTo(currency)}
                             selectCurrency={to}
+                            
+                            onCurrencyChange={(currency)=>setTo(currency)}
                             amountDisabled
                             
                         />
@@ -77,6 +97,8 @@ function App() {
             </div>
         </div>
     </div>
+
+    
 );
 }
 
